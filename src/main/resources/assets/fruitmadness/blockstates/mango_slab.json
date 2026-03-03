@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "fruitmadness:block/mango_slab"
+    },
+    "type=double": {
+      "model": "fruitmadness:block/mango_planks"
+    },
+    "type=top": {
+      "model": "fruitmadness:block/mango_slab_top"
+    }
+  }
+}

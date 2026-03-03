@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.15,
+  "ingredient": {
+    "item": "fruitmadness:mango_log"
+  },
+  "result": {
+    "id": "minecraft:charcoal"
+  }
+}

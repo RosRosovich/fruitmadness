@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "fruitmadness:mango_log"
+    }
+  ],
+  "result": {
+    "id": "fruitmadness:mango_planks",
+    "count": 4
+  }
+}

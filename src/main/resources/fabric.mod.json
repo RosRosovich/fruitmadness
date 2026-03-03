@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "fruitmadness",
+  "version": "0.0.1",
+  "name": "Fruit Madness",
+  "description": "Фруктовый хаос",
+  "authors": ["DobriyMsi"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/fruitmadness/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.fruitmadness.FruitMadness"
+    ],
+    "client": [
+      "ru.fruitmadness.client.FruitMadnessClient"
+    ],
+    "fabric-datagen": [
+      "ru.fruitmadness.worldgen.MangoWorldGen"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

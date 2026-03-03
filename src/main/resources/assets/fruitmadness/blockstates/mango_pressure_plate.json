@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "fruitmadness:block/mango_pressure_plate"
+    },
+    "powered=true": {
+      "model": "fruitmadness:block/mango_pressure_plate_down"
+    }
+  }
+}

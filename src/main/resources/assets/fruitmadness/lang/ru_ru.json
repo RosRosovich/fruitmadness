@@ -1,0 +1,23 @@
+{
+  "itemGroup.fruitmadness": "Фруктовое Безумие",
+
+  "block.fruitmadness.mango_log": "Манговое бревно",
+  "block.fruitmadness.mango_planks": "Манговые доски",
+  "block.fruitmadness.mango_slab": "Манговая плита",
+  "block.fruitmadness.mango_stairs": "Манговые ступеньки",
+  "block.fruitmadness.mango_fence": "Манговый забор",
+  "block.fruitmadness.mango_fence_gate": "Манговая калитка",
+  "block.fruitmadness.mango_button": "Манговая кнопка",
+  "block.fruitmadness.mango_pressure_plate": "Манговая нажимная плита",
+  "block.fruitmadness.mango_leaves": "Манговые листья",
+  "block.fruitmadness.mango_sapling": "Саженец мангового дерева",
+  "item.fruitmadness.mango_sapling": "Саженец мангового дерева",
+
+  "item.fruitmadness.mango": "Манго",
+  "item.fruitmadness.golden_mango": "Золотое манго",
+  "item.fruitmadness.golden_pit": "Золотая косточка",
+
+  "item.fruitmadness.blowgun": "Духовая трубка",
+
+  "effect.fruitmadness.blessing": "Благословение"
+}

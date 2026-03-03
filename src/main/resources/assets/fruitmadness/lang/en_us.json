@@ -1,0 +1,23 @@
+{
+  "itemGroup.fruitmadness": "Fruit Madness",
+
+  "block.fruitmadness.mango_log": "Mango Log",
+  "block.fruitmadness.mango_planks": "Mango Planks",
+  "block.fruitmadness.mango_slab": "Mango Slab",
+  "block.fruitmadness.mango_stairs": "Mango Stairs",
+  "block.fruitmadness.mango_fence": "Mango Fence",
+  "block.fruitmadness.mango_fence_gate": "Mango Fence Gate",
+  "block.fruitmadness.mango_button": "Mango Button",
+  "block.fruitmadness.mango_pressure_plate": "Mango Pressure Plate",
+  "block.fruitmadness.mango_leaves": "Mango Leaves",
+  "block.fruitmadness.mango_sapling": "Mango Sapling",
+  "item.fruitmadness.mango_sapling": "Mango Sapling",
+
+  "item.fruitmadness.mango": "Mango",
+  "item.fruitmadness.golden_mango": "Golden Mango",
+  "item.fruitmadness.golden_pit": "Golden Pit",
+
+  "item.fruitmadness.blowgun": "Blowgun",
+
+  "effect.fruitmadness.blessing": "Blessing"
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "fruitmadness:block/mango_planks",
+    "top": "fruitmadness:block/mango_planks",
+    "side": "fruitmadness:block/mango_planks"
+  }
+}

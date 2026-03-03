@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    " N ",
+    "NMN",
+    " N "
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:gold_nugget"
+    },
+    "M": {
+      "item": "fruitmadness:mango"
+    }
+  },
+  "result": {
+    "id": "fruitmadness:golden_mango",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "fruitmadness:mango_planks"
+    }
+  },
+  "result": {
+    "id": "minecraft:chest",
+    "count": 1
+  }
+}

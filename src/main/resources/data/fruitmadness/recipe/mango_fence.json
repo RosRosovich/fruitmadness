@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "decoration",
+  "key": {
+    "#": {
+      "item": "fruitmadness:mango_planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "#S#"
+  ],
+  "result": {
+    "id": "fruitmadness:mango_fence",
+    "count": 3
+  }
+}
