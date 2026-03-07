@@ -22,6 +22,7 @@ public final class ModRecipes extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+        // Золотое манго
         ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.GOLDEN_MANGO, 1)
                 .pattern("GGG")
                 .pattern("GMG")
@@ -32,11 +33,13 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango", conditionsFromItem(ModItems.MANGO))
                 .offerTo(exporter);
 
+        // Доски из бревна
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModItems.MANGO_PLANKS_ITEM, 4)
                 .input(ModItems.MANGO_LOG_ITEM)
                 .criterion("has_mango_log", conditionsFromItem(ModItems.MANGO_LOG_ITEM))
                 .offerTo(exporter);
 
+        // Палки из досок
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.STICK, 4)
                 .pattern("#")
                 .pattern("#")
@@ -44,6 +47,7 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
+        // Верстак из досок
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.CRAFTING_TABLE, 1)
                 .pattern("##")
                 .pattern("##")
@@ -51,6 +55,7 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
+        // Сундук из досок
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, Items.CHEST, 1)
                 .pattern("###")
                 .pattern("# #")
@@ -58,13 +63,15 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .input('#', ModItems.MANGO_PLANKS_ITEM)
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
+
+        // Плита
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModItems.MANGO_SLAB_ITEM, 6)
                 .pattern("###")
                 .input('#', ModItems.MANGO_PLANKS_ITEM)
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
-        // Ступеньки из досок
+        // Ступеньки
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModItems.MANGO_STAIRS_ITEM, 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -73,7 +80,7 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
-        // Забор из досок и палок
+        // Забор
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModItems.MANGO_FENCE_ITEM, 3)
                 .pattern("#S#")
                 .pattern("#S#")
@@ -82,7 +89,7 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
-        // Калитка из палок и досок
+        // Калитка
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModItems.MANGO_FENCE_GATE_ITEM, 1)
                 .pattern("S#S")
                 .pattern("S#S")
@@ -91,18 +98,42 @@ public final class ModRecipes extends FabricRecipeProvider {
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
-        // Кнопка из досок
+        // Кнопка
         ShapelessRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModItems.MANGO_BUTTON_ITEM, 1)
                 .input(ModItems.MANGO_PLANKS_ITEM)
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
 
-        // Нажимная плита из досок
+        // Нажимная плита
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModItems.MANGO_PRESSURE_PLATE_ITEM, 1)
                 .pattern("##")
                 .input('#', ModItems.MANGO_PLANKS_ITEM)
                 .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
                 .offerTo(exporter);
-    
+
+        // Манговая дверь
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModItems.MANGO_DOOR_ITEM, 3)
+                .pattern("PP")
+                .pattern("PP")
+                .pattern("PP")
+                .input('P', ModItems.MANGO_PLANKS_ITEM)
+                .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
+                .offerTo(exporter);
+
+        // Манговый люк
+        ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, ModItems.MANGO_TRAPDOOR_ITEM, 2)
+                .pattern("PPP")
+                .pattern("PPP")
+                .input('P', ModItems.MANGO_PLANKS_ITEM)
+                .criterion("has_mango_planks", conditionsFromItem(ModItems.MANGO_PLANKS_ITEM))
+                .offerTo(exporter);
+
+        // Манго блок
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModItems.MANGO_BLOCK_ITEM, 1)
+                .pattern("LL")
+                .pattern("LL")
+                .input('L', ModItems.MANGO_LOG_ITEM)
+                .criterion("has_mango_log", conditionsFromItem(ModItems.MANGO_LOG_ITEM))
+                .offerTo(exporter);
     }
 }

@@ -24,7 +24,6 @@ public class BlowgunItem extends BowItem {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
 
-        // Простая проверка: есть ли золотые косточки в инвентаре?
         if (!user.getAbilities().creativeMode && findGoldenPits(user).isEmpty()) {
             return TypedActionResult.fail(itemStack);
         }
@@ -49,22 +48,16 @@ public class BlowgunItem extends BowItem {
         boolean creative = player.getAbilities().creativeMode;
 
         if (!world.isClient) {
-            // Создаем золотую косточку
             GoldenPitEntity goldenPit = GoldenPitEntity.create(world, player);
 
-            // Устанавливаем скорость
             float speed = 3.0f * charge;
             goldenPit.setVelocity(player, player.getPitch(), player.getYaw(), 0.0f, speed, 1.0f);
 
-            // Усиливаем урон (3.0 = 1.5 сердца) - косточка из духовой трубки сильнее
             goldenPit.setEnhancedDamage(3.0f);
-
-            // Увеличиваем радиус поджога в 2 раза (4x4 вместо 2x2)
-            goldenPit.setRadiusMultiplier(3.0f);
+            goldenPit.setLarge(true);
 
             world.spawnEntity(goldenPit);
 
-            // Потребляем косточку, если не в творческом режиме
             if (!creative) {
                 ItemStack pits = findGoldenPits(player);
                 if (!pits.isEmpty()) {
@@ -72,12 +65,10 @@ public class BlowgunItem extends BowItem {
                 }
             }
 
-            // Проигрываем звук выстрела
             world.playSound(null, player.getX(), player.getY(), player.getZ(),
                     SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS,
                     1.0f, 1.5f / (world.getRandom().nextFloat() * 0.4f + 1.2f) + charge * 0.5f);
 
-            // Изнашиваем духовую трубку
             if (!creative) {
                 stack.damage(1, player, LivingEntity.getSlotForHand(user.getActiveHand()));
             }
@@ -87,7 +78,6 @@ public class BlowgunItem extends BowItem {
     }
 
     private ItemStack findGoldenPits(PlayerEntity player) {
-        // Ищем золотые косточки в инвентаре
         for (int i = 0; i < player.getInventory().size(); i++) {
             ItemStack stack = player.getInventory().getStack(i);
             if (stack.isOf(ModItems.GOLDEN_PIT)) {

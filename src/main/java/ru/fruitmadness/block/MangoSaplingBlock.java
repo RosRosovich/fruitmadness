@@ -15,7 +15,6 @@ import java.util.Optional;
 
 public class MangoSaplingBlock extends SaplingBlock {
 
-    // Создаем ключи к фичам, которые определены в JSON
     private static final RegistryKey<ConfiguredFeature<?, ?>> MANGO_TREE_KEY =
             RegistryKey.of(
                     net.minecraft.registry.RegistryKeys.CONFIGURED_FEATURE,

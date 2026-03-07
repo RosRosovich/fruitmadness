@@ -1,5 +1,6 @@
 package ru.fruitmadness.entity;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -13,18 +14,18 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import ru.fruitmadness.registry.ModEntities;
 import ru.fruitmadness.registry.ModItems;
 
 public class GoldenPitEntity extends ThrownItemEntity {
 
-    private static final TrackedData<Integer> RADIUS_MULTIPLIER =
-            DataTracker.registerData(GoldenPitEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    private static final TrackedData<Boolean> IS_LARGE =
+            DataTracker.registerData(GoldenPitEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     private float enhancedDamage = 1.0f;
 
-    // Конструктор для EntityType
     public GoldenPitEntity(EntityType<? extends GoldenPitEntity> type, World world) {
         super(type, world);
     }
@@ -32,15 +33,15 @@ public class GoldenPitEntity extends ThrownItemEntity {
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(RADIUS_MULTIPLIER, 10); // 1.0 * 10
+        builder.add(IS_LARGE, false); // По умолчанию маленький (только 1 блок)
     }
 
-    public void setRadiusMultiplier(float multiplier) {
-        this.dataTracker.set(RADIUS_MULTIPLIER, (int)(multiplier * 10));
+    public void setLarge(boolean large) {
+        this.dataTracker.set(IS_LARGE, large);
     }
 
-    public float getRadiusMultiplier() {
-        return this.dataTracker.get(RADIUS_MULTIPLIER) / 10.0f;
+    public boolean isLarge() {
+        return this.dataTracker.get(IS_LARGE);
     }
 
     public void setEnhancedDamage(float damage) {
@@ -51,7 +52,6 @@ public class GoldenPitEntity extends ThrownItemEntity {
         return this.enhancedDamage;
     }
 
-    // ВАЖНО: ВОЗВРАЩАЕМ СТАРЫЙ МЕТОД CREATE!
     public static GoldenPitEntity create(World world, LivingEntity owner) {
         GoldenPitEntity entity = new GoldenPitEntity(ModEntities.GOLDEN_PIT, world);
         entity.setOwner(owner);
@@ -69,45 +69,56 @@ public class GoldenPitEntity extends ThrownItemEntity {
 
         if (!this.getWorld().isClient()) {
             World world = this.getWorld();
-            float radiusMultiplier = getRadiusMultiplier();
 
             if (hitResult.getType() == HitResult.Type.ENTITY) {
                 EntityHitResult entityHit = (EntityHitResult) hitResult;
-                entityHit.getEntity().setOnFireFor(6); // Поджигаем на 6 секунд
+                entityHit.getEntity().setOnFireFor(6);
 
-                // Больший радиус поджога при усилении
-                int radius = Math.round(1 * radiusMultiplier);
-                setFireAround(world, entityHit.getEntity().getBlockPos(), radius);
+                if (isLarge()) {
+                    setFireArea(world, entityHit.getEntity().getBlockPos(), 1); // Радиус 1 = область 3x3x3
+                } else {
+                    setFireAt(world, entityHit.getEntity().getBlockPos()); // Только 1 блок
+                }
 
-                // Спавним частицы огня
                 world.addParticle(ParticleTypes.FLAME,
                         entityHit.getPos().x, entityHit.getPos().y, entityHit.getPos().z,
                         0, 0, 0);
 
             } else if (hitResult.getType() == HitResult.Type.BLOCK) {
                 BlockHitResult blockHit = (BlockHitResult) hitResult;
+                BlockPos pos = blockHit.getBlockPos().offset(blockHit.getSide());
 
-                // Больший радиус поджога при усилении
-                int radius = Math.round(1 * radiusMultiplier);
-                setFireAround(world, blockHit.getBlockPos().offset(blockHit.getSide()), radius);
+                if (isLarge()) {
+                    setFireArea(world, pos, 1); // Радиус 1 = область 3x3x3
+                } else {
+                    setFireAt(world, pos); // Только 1 блок
+                }
             }
 
             this.discard();
         }
     }
 
-    private void setFireAround(World world, net.minecraft.util.math.BlockPos center, int radius) {
-        for (int x = -radius; x <= radius; x++) {
-            for (int z = -radius; z <= radius; z++) {
-                for (int y = -1; y <= 1; y++) {
-                    net.minecraft.util.math.BlockPos firePos = center.add(x, y, z);
-                    BlockState blockState = world.getBlockState(firePos);
+    private void setFireAt(World world, BlockPos pos) {
+        if (canIgniteBlock(world.getBlockState(pos)) && world.getBlockState(pos).isAir()) {
+            world.setBlockState(pos, Blocks.FIRE.getDefaultState());
 
-                    if (canIgniteBlock(blockState) && world.getBlockState(firePos).isAir()) {
+            world.addParticle(ParticleTypes.FLAME,
+                    pos.getX() + 0.5, pos.getY() + 0.1, pos.getZ() + 0.5,
+                    0, 0.1, 0);
+        }
+    }
+
+    private void setFireArea(World world, BlockPos center, int radius) {
+        for (int x = -radius; x <= radius; x++) {
+            for (int y = -radius; y <= radius; y++) {
+                for (int z = -radius; z <= radius; z++) {
+                    BlockPos firePos = center.add(x, y, z);
+
+                    if (canIgniteBlock(world.getBlockState(firePos)) && world.getBlockState(firePos).isAir()) {
                         world.setBlockState(firePos, Blocks.FIRE.getDefaultState());
 
-                        // Спавним частицы огня
-                        for (int i = 0; i < 3; i++) {
+                        for (int i = 0; i < 2; i++) {
                             world.addParticle(ParticleTypes.FLAME,
                                     firePos.getX() + 0.5,
                                     firePos.getY() + 0.1,
@@ -123,7 +134,7 @@ public class GoldenPitEntity extends ThrownItemEntity {
     }
 
     private boolean canIgniteBlock(BlockState blockState) {
-        var block = blockState.getBlock();
+        Block block = blockState.getBlock();
 
         return block != Blocks.WATER && block != Blocks.LAVA &&
                 block != Blocks.ICE && block != Blocks.PACKED_ICE &&

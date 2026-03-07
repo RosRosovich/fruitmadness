@@ -12,12 +12,25 @@
   "block.fruitmadness.mango_leaves": "Манговые листья",
   "block.fruitmadness.mango_sapling": "Саженец мангового дерева",
   "item.fruitmadness.mango_sapling": "Саженец мангового дерева",
+  "block.fruitmadness.mango_block": "Манго",
+  "block.fruitmadness.stripped_mango_block": "Обтесанный манговый блок",
+  "block.fruitmadness.stripped_mango_log": "Обтесанное манговое бревно",
+  "block.fruitmadness.mango_sign": "Манговая табличка",
+  "block.fruitmadness.mango_hanging_sign": "Манговая подвесная табличка",
+  "item.fruitmadness.mango_sign": "Манговая табличка",
+  "item.fruitmadness.mango_hanging_sign": "Манговая подвесная табличка",
+  "block.fruitmadness.mango_door": "Манговая дверь",
+  "block.fruitmadness.mango_trapdoor": "Манговый люк",
 
   "item.fruitmadness.mango": "Манго",
   "item.fruitmadness.golden_mango": "Золотое манго",
   "item.fruitmadness.golden_pit": "Золотая косточка",
+  "item.fruitmadness.baby_shark_bucket": "Ведро с маленькой акулой",
 
   "item.fruitmadness.blowgun": "Духовая трубка",
 
-  "effect.fruitmadness.blessing": "Благословение"
+  "effect.fruitmadness.blessing": "Благословение",
+
+  "item.fruitmadness.shark_spawn_egg": "Яйцо призывания акулы",
+  "entity.fruitmadness.shark": "Акула"
 }
