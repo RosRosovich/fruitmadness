@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL",
+    "LL"
+  ],
+  "key": {
+    "L": {
+      "item": "fruitmadness:mango_log"
+    }
+  },
+  "result": {
+    "id": "fruitmadness:mango_block",
+    "count": 1
+  }
+}
