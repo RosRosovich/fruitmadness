@@ -12,12 +12,27 @@
   "block.fruitmadness.mango_leaves": "Mango Leaves",
   "block.fruitmadness.mango_sapling": "Mango Sapling",
   "item.fruitmadness.mango_sapling": "Mango Sapling",
+  "block.fruitmadness.mango_block": "Block of Mango",
+  "block.fruitmadness.stripped_mango_block": "Stripped Mango Block",
+  "block.fruitmadness.stripped_mango_log": "Stripped Mango Log",
+  "block.fruitmadness.mango_sign": "Mango Sign",
+  "block.fruitmadness.mango_hanging_sign": "Mango Hanging Sign",
+  "item.fruitmadness.mango_sign": "Mango Sign",
+  "item.fruitmadness.mango_hanging_sign": "Mango Hanging Sign",
+
+  "block.fruitmadness.mango_door": "Mango Door",
+  "block.fruitmadness.mango_trapdoor": "Mango Trapdoor",
 
   "item.fruitmadness.mango": "Mango",
   "item.fruitmadness.golden_mango": "Golden Mango",
   "item.fruitmadness.golden_pit": "Golden Pit",
+  "item.fruitmadness.baby_shark_bucket": "Bucket of Baby Shark",
 
   "item.fruitmadness.blowgun": "Blowgun",
 
-  "effect.fruitmadness.blessing": "Blessing"
+  "effect.fruitmadness.blessing": "Blessing",
+
+  "item.fruitmadness.shark_spawn_egg": "Shark Spawn Egg",
+  "entity.fruitmadness.shark": "Shark"
+
 }

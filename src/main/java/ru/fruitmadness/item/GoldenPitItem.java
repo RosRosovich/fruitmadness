@@ -19,6 +19,7 @@ public final class GoldenPitItem extends Item {
 
         if (!world.isClient()) {
             GoldenPitEntity entity = GoldenPitEntity.create(world, user);
+            entity.setLarge(false);
             entity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 1.0f);
             world.spawnEntity(entity);
 

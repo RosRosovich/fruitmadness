@@ -1,102 +1,158 @@
 package ru.fruitmadness.registry;
 
 import net.minecraft.block.*;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import ru.fruitmadness.FruitMadness;
-import ru.fruitmadness.block.MangoSaplingBlock;
+import ru.fruitmadness.block.*;
 
 public final class ModBlocks {
 
-    // Основные блоки
     public static final Block MANGO_LOG = new PillarBlock(
-            AbstractBlock.Settings.copy(Blocks.OAK_LOG)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+    );
+
+    public static final Block STRIPPED_MANGO_LOG = new PillarBlock(
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_PLANKS = new Block(
-            AbstractBlock.Settings.copy(Blocks.OAK_PLANKS)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
-    // Производные блоки из досок
     public static final Block MANGO_SLAB = new SlabBlock(
-            AbstractBlock.Settings.copy(Blocks.OAK_SLAB)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_STAIRS = new StairsBlock(
             ModBlocks.MANGO_PLANKS.getDefaultState(),
-            AbstractBlock.Settings.copy(Blocks.OAK_STAIRS)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_FENCE = new FenceBlock(
-            AbstractBlock.Settings.copy(Blocks.OAK_FENCE)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_FENCE_GATE = new FenceGateBlock(
             WoodType.OAK,
-            AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(2.0F, 3.0F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_BUTTON = new ButtonBlock(
             BlockSetType.OAK,
             30,
-            AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .noCollision()
                     .strength(0.5F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
     public static final Block MANGO_PRESSURE_PLATE = new PressurePlateBlock(
             BlockSetType.OAK,
-            AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
                     .strength(0.5F)
+                    .sounds(BlockSoundGroup.WOOD)
                     .burnable()
     );
 
-    public static final Block MANGO_LEAVES = new LeavesBlock(
-            AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)
+    public static final Block MANGO_LEAVES = new Block(
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
                     .strength(0.2F)
+                    .sounds(BlockSoundGroup.GRASS)
                     .nonOpaque()
                     .allowsSpawning(Blocks::canSpawnOnLeaves)
                     .suffocates(Blocks::never)
                     .blockVision(Blocks::never)
                     .burnable()
-    ) {
-        @Override
-        public boolean hasRandomTicks(BlockState state) {
-            return false; // Отключаем случайные обновления
-        }
+    );
 
-        @Override
-        public void randomTick(BlockState state, net.minecraft.server.world.ServerWorld world,
-                               net.minecraft.util.math.BlockPos pos, net.minecraft.util.math.random.Random random) {
-            // Ничего не делаем - листья не опадают
-        }
-    };
+    public static final Block MANGO_SAPLING = new MangoSaplingBlock(
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.DARK_GREEN)
+                    .noCollision()
+                    .strength(0.0F)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .nonOpaque()
+                    .ticksRandomly()
+                    .burnable()
+    );
 
-    // Саженец
-    public static final Block MANGO_SAPLING =
-            new MangoSaplingBlock(
-                    AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)
-                            .strength(0.0F)
-                            .ticksRandomly()
-                            .nonOpaque()
-                            .burnable()
-            );
+    public static final Block MANGO_DOOR = new DoorBlock(
+            BlockSetType.OAK,
+            AbstractBlock.Settings.copy(Blocks.OAK_DOOR).strength(3.0F)
+                    .nonOpaque()
+    );
+
+    public static final Block MANGO_TRAPDOOR = new TrapdoorBlock(
+            BlockSetType.OAK,
+            AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR).strength(3.0F)
+                    .nonOpaque()
+    );
+
+    public static final Block MANGO_BLOCK = new PillarBlock(
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+    );
+
+    public static final Block STRIPPED_MANGO_BLOCK = new PillarBlock(
+            AbstractBlock.Settings.create()
+                    .mapColor(MapColor.OAK_TAN)
+                    .instrument(NoteBlockInstrument.BASS)
+                    .strength(2.0F)
+                    .sounds(BlockSoundGroup.WOOD)
+                    .burnable()
+    );
 
     public static void register() {
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_log"), MANGO_LOG);
+        Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "stripped_mango_log"), STRIPPED_MANGO_LOG);
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_planks"), MANGO_PLANKS);
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_slab"), MANGO_SLAB);
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_stairs"), MANGO_STAIRS);
@@ -106,5 +162,10 @@ public final class ModBlocks {
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_pressure_plate"), MANGO_PRESSURE_PLATE);
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_leaves"), MANGO_LEAVES);
         Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_sapling"), MANGO_SAPLING);
+        Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_block"), MANGO_BLOCK);
+        Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "stripped_mango_block"), STRIPPED_MANGO_BLOCK);
+
+        Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_door"), MANGO_DOOR);
+        Registry.register(Registries.BLOCK, Identifier.of(FruitMadness.MOD_ID, "mango_trapdoor"), MANGO_TRAPDOOR);
     }
 }

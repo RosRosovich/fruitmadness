@@ -22,6 +22,7 @@ public final class ModItemGroups {
 
                 // Блоки
                 entries.add(ModItems.MANGO_LOG_ITEM);
+                entries.add(ModItems.STRIPPED_MANGO_LOG_ITEM);
                 entries.add(ModItems.MANGO_PLANKS_ITEM);
                 entries.add(ModItems.MANGO_SAPLING_ITEM);
                 entries.add(ModItems.MANGO_SLAB_ITEM);
@@ -31,8 +32,15 @@ public final class ModItemGroups {
                 entries.add(ModItems.MANGO_BUTTON_ITEM);
                 entries.add(ModItems.MANGO_PRESSURE_PLATE_ITEM);
                 entries.add(ModItems.MANGO_LEAVES_ITEM);
+                entries.add(ModItems.MANGO_BLOCK_ITEM);
+                entries.add(ModItems.STRIPPED_MANGO_BLOCK_ITEM);
+                entries.add(ModItems.MANGO_DOOR_ITEM);
+                entries.add(ModItems.MANGO_TRAPDOOR_ITEM);
 
+                // Инструменты и сущности
                 entries.add(ModItems.BLOWGUN);
+                entries.add(ModItems.SHARK_SPAWN_EGG);
+                entries.add(ModItems.BABY_SHARK_BUCKET);
             })
             .build();
 
