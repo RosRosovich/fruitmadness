@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "fruitmadness:mango_log",
+    "fruitmadness:stripped_mango_log",
+    "fruitmadness:mango_block",
+    "fruitmadness:stripped_mango_block"
+  ]
+}

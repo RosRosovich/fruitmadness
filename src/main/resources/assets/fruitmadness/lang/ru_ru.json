@@ -22,6 +22,13 @@
   "block.fruitmadness.mango_door": "Манговая дверь",
   "block.fruitmadness.mango_trapdoor": "Манговый люк",
 
+  "advancements.fruitmadness.catch_baby_shark.title": "Крошечный тралалеро тралала",
+  "advancements.fruitmadness.catch_baby_shark.description": "Поймайте детеныша акулы в ведро",
+  "advancements.fruitmadness.shoot_golden_pit.title": "Лови аптечку!",
+  "advancements.fruitmadness.shoot_golden_pit.description": "Выстрелите золотой косточкой из духовой трубки",
+  "advancements.fruitmadness.blessing_effect.title": "Кара небесная",
+  "advancements.fruitmadness.blessing_effect.description": "Получите эффект Благословения, съев золотое манго",
+
   "item.fruitmadness.mango": "Манго",
   "item.fruitmadness.golden_mango": "Золотое манго",
   "item.fruitmadness.golden_pit": "Золотая косточка",

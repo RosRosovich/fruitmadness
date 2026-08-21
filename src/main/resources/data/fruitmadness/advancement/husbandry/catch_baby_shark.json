@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "id": "fruitmadness:baby_shark_bucket"
+    },
+    "title": {
+      "translate": "advancements.fruitmadness.catch_baby_shark.title"
+    },
+    "description": {
+      "translate": "advancements.fruitmadness.catch_baby_shark.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "catch_baby_shark": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "fruitmadness:baby_shark_bucket"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch_baby_shark"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

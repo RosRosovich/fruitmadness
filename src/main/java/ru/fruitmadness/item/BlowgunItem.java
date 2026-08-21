@@ -1,20 +1,27 @@
 package ru.fruitmadness.item;
 
+import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import ru.fruitmadness.FruitMadness;
 import ru.fruitmadness.entity.GoldenPitEntity;
 import ru.fruitmadness.registry.ModItems;
 
 public class BlowgunItem extends BowItem {
+
+    private static final Identifier SHOOT_ADVANCEMENT_ID =
+            Identifier.of(FruitMadness.MOD_ID, "husbandry/shoot_golden_pit");
 
     public BlowgunItem(Settings settings) {
         super(settings.maxDamage(384));
@@ -58,6 +65,10 @@ public class BlowgunItem extends BowItem {
 
             world.spawnEntity(goldenPit);
 
+            if (player instanceof ServerPlayerEntity serverPlayer) {
+                grantAdvancement(serverPlayer);
+            }
+
             if (!creative) {
                 ItemStack pits = findGoldenPits(player);
                 if (!pits.isEmpty()) {
@@ -75,6 +86,20 @@ public class BlowgunItem extends BowItem {
         }
 
         player.incrementStat(Stats.USED.getOrCreateStat(this));
+    }
+
+    private void grantAdvancement(ServerPlayerEntity player) {
+        AdvancementEntry advancement = player.getServer().getAdvancementLoader()
+                .get(SHOOT_ADVANCEMENT_ID);
+
+        if (advancement != null) {
+            var progress = player.getAdvancementTracker().getProgress(advancement);
+            if (!progress.isDone()) {
+                for (String criterion : progress.getUnobtainedCriteria()) {
+                    player.getAdvancementTracker().grantCriterion(advancement, criterion);
+                }
+            }
+        }
     }
 
     private ItemStack findGoldenPits(PlayerEntity player) {

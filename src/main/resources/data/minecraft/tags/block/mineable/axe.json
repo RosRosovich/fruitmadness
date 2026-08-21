@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "fruitmadness:mango_log",
+    "fruitmadness:stripped_mango_log",
+    "fruitmadness:mango_planks",
+    "fruitmadness:mango_slab",
+    "fruitmadness:mango_stairs",
+    "fruitmadness:mango_fence",
+    "fruitmadness:mango_fence_gate",
+    "fruitmadness:mango_button",
+    "fruitmadness:mango_pressure_plate",
+    "fruitmadness:mango_door",
+    "fruitmadness:mango_trapdoor",
+    "fruitmadness:mango_block",
+    "fruitmadness:stripped_mango_block"
+  ]
+}

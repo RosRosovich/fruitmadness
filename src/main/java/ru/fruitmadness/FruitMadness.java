@@ -24,6 +24,7 @@ public class FruitMadness implements ModInitializer {
         ModFlammableBlocks.register();
         ModFuelItems.register();
         ModLootTables.register();
+        ModComposter.register();
         MangoWorldGen.register();
         SharkSpawns.register();
 

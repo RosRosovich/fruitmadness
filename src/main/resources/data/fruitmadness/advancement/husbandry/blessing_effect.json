@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "id": "fruitmadness:golden_mango"
+    },
+    "title": {
+      "translate": "advancements.fruitmadness.blessing_effect.title"
+    },
+    "description": {
+      "translate": "advancements.fruitmadness.blessing_effect.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "blessing_effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "fruitmadness:blessing": {}
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "blessing_effect"
+    ]
+  ],
+  "rewards": {
+    "experience": 80
+  },
+  "sends_telemetry_event": true
+}

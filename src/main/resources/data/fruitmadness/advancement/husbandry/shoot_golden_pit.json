@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "id": "fruitmadness:golden_pit"
+    },
+    "title": {
+      "translate": "advancements.fruitmadness.shoot_golden_pit.title"
+    },
+    "description": {
+      "translate": "advancements.fruitmadness.shoot_golden_pit.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shoot_golden_pit": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "shoot_golden_pit"
+    ]
+  ],
+  "rewards": {
+    "experience": 35
+  },
+  "sends_telemetry_event": true
+}

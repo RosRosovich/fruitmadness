@@ -20,6 +20,13 @@
   "item.fruitmadness.mango_sign": "Mango Sign",
   "item.fruitmadness.mango_hanging_sign": "Mango Hanging Sign",
 
+  "advancements.fruitmadness.catch_baby_shark.title": "Tiny Tra-la-la-lero",
+  "advancements.fruitmadness.catch_baby_shark.description": "Catch a baby shark in a bucket",
+  "advancements.fruitmadness.shoot_golden_pit.title": "Catch a Medkit!",
+  "advancements.fruitmadness.shoot_golden_pit.description": "Shoot a golden pit from a blowgun",
+  "advancements.fruitmadness.blessing_effect.title": "Heavenly Punishment",
+  "advancements.fruitmadness.blessing_effect.description": "Obtain the Blessing effect by eating a golden mango",
+
   "block.fruitmadness.mango_door": "Mango Door",
   "block.fruitmadness.mango_trapdoor": "Mango Trapdoor",
 
