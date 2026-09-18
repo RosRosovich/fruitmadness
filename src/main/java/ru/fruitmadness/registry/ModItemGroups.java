@@ -19,6 +19,7 @@ public final class ModItemGroups {
                 entries.add(ModItems.MANGO);
                 entries.add(ModItems.GOLDEN_MANGO);
                 entries.add(ModItems.GOLDEN_PIT);
+                entries.add(ModItems.SHARK_TOOTH);
 
                 // Блоки
                 entries.add(ModItems.MANGO_LOG_ITEM);
@@ -39,6 +40,7 @@ public final class ModItemGroups {
 
                 // Инструменты и сущности
                 entries.add(ModItems.BLOWGUN);
+                entries.add(ModItems.LEEK);
                 entries.add(ModItems.SHARK_SPAWN_EGG);
                 entries.add(ModItems.BABY_SHARK_BUCKET);
             })

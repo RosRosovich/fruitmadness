@@ -26,6 +26,8 @@
   "advancements.fruitmadness.shoot_golden_pit.description": "Shoot a golden pit from a blowgun",
   "advancements.fruitmadness.blessing_effect.title": "Heavenly Punishment",
   "advancements.fruitmadness.blessing_effect.description": "Obtain the Blessing effect by eating a golden mango",
+  "advancements.fruitmadness.nuclear_chapalakh.title": "Nuclear Chapalakh",
+  "advancements.fruitmadness.nuclear_chapalakh.description": "Slam the ground with a Leek and send mobs flying",
 
   "block.fruitmadness.mango_door": "Mango Door",
   "block.fruitmadness.mango_trapdoor": "Mango Trapdoor",
@@ -36,6 +38,8 @@
   "item.fruitmadness.baby_shark_bucket": "Bucket of Baby Shark",
 
   "item.fruitmadness.blowgun": "Blowgun",
+  "item.fruitmadness.leek": "Leek",
+  "item.fruitmadness.shark_tooth": "Shark Tooth",
 
   "effect.fruitmadness.blessing": "Blessing",
 

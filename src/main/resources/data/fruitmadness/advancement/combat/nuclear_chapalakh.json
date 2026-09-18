@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:story/root",
+  "display": {
+    "icon": {
+      "id": "fruitmadness:leek"
+    },
+    "title": {
+      "translate": "advancements.fruitmadness.nuclear_chapalakh.title"
+    },
+    "description": {
+      "translate": "advancements.fruitmadness.nuclear_chapalakh.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "used_slam": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "used_slam"
+    ]
+  ]
+}

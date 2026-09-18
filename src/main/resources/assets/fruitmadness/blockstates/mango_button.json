@@ -34,12 +34,12 @@
       "y": 90
     },
     "face=ceiling,facing=west,powered=true": {
-      "model": "mangomadness:block/mango_button_pressed",
+      "model": "fruitmadness:block/mango_button_pressed",
       "x": 180,
       "y": 90
     },
     "face=floor,facing=east,powered=false": {
-      "model": "mangomadness:block/mango_button",
+      "model": "fruitmadness:block/mango_button",
       "y": 90
     },
     "face=floor,facing=east,powered=true": {

@@ -27,7 +27,6 @@ public class FruitMadnessClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(SharkEntityModel.SHARK_LAYER, SharkEntityModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(BabySharkEntityModel.BABY_SHARK_LAYER, BabySharkEntityModel::getTexturedModelData);
-
         ModelPredicateProviderRegistry.register(ModItems.BABY_SHARK_BUCKET, Identifier.of("filled"),
                 (stack, world, entity, seed) -> 1.0f);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MANGO_DOOR, RenderLayer.getCutout());

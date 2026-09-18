@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "fruitmadness:shark_tooth"
+    }
+  ],
+  "result": {
+    "id": "minecraft:bone_meal",
+    "count": 3
+  }
+}

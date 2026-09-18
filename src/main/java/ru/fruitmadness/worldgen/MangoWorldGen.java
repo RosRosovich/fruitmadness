@@ -21,7 +21,7 @@ public class MangoWorldGen {
                 BiomeSelectors.includeByKey(
                         net.minecraft.registry.RegistryKey.of(
                                 net.minecraft.registry.RegistryKeys.BIOME,
-                                net.minecraft.util.Identifier.of("minecraft", "desert")
+                                net.minecraft.util.Identifier.of("minecraft", "sparse_jungle")
                         )
                 ),
                 GenerationStep.Feature.VEGETAL_DECORATION,

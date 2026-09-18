@@ -28,6 +28,8 @@
   "advancements.fruitmadness.shoot_golden_pit.description": "Выстрелите золотой косточкой из духовой трубки",
   "advancements.fruitmadness.blessing_effect.title": "Кара небесная",
   "advancements.fruitmadness.blessing_effect.description": "Получите эффект Благословения, съев золотое манго",
+  "advancements.fruitmadness.nuclear_chapalakh.title": "Ядерный чапалах",
+  "advancements.fruitmadness.nuclear_chapalakh.description": "Ударь в пол луком-пореем и разбросай мобов",
 
   "item.fruitmadness.mango": "Манго",
   "item.fruitmadness.golden_mango": "Золотое манго",
@@ -35,6 +37,8 @@
   "item.fruitmadness.baby_shark_bucket": "Ведро с маленькой акулой",
 
   "item.fruitmadness.blowgun": "Духовая трубка",
+  "item.fruitmadness.leek": "Лук-порей",
+  "item.fruitmadness.shark_tooth": "Акулий зуб",
 
   "effect.fruitmadness.blessing": "Благословение",
 

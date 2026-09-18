@@ -5,10 +5,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
+import net.minecraft.village.VillagerProfession;
 
 public final class ModTrades {
 
     public static void register() {
+        // === Странствующий торговец ===
         TradeOfferHelper.registerWanderingTraderOffers(1, factories -> {
             factories.add((entity, random) ->
                     new TradeOffer(
@@ -37,6 +39,18 @@ public final class ModTrades {
                             8,
                             1,
                             0.05f
+                    )
+            );
+        });
+
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 5, factories -> {
+            factories.add((entity, random) ->
+                    new TradeOffer(
+                            new TradedItem(Items.EMERALD, 18),
+                            new ItemStack(ModItems.LEEK),
+                            1,     
+                            30,
+                            0.1f
                     )
             );
         });

@@ -13,9 +13,12 @@ public final class ModItems {
     public static final Item MANGO = new MangoItem();
     public static final Item GOLDEN_MANGO = new GoldenMangoItem();
     public static final Item GOLDEN_PIT = new GoldenPitItem();
+    public static final Item SHARK_TOOTH = new SharkToothItem();
+
 
     // Инструмент
     public static final Item BLOWGUN = new BlowgunItem(new Item.Settings().maxCount(1));
+    public static final Item LEEK = new LeekItem();
 
     // Блоки
     public static final Item MANGO_LOG_ITEM = new BlockItem(ModBlocks.MANGO_LOG, new Item.Settings());
@@ -43,9 +46,12 @@ public final class ModItems {
         Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "mango"), MANGO);
         Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "golden_mango"), GOLDEN_MANGO);
         Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "golden_pit"), GOLDEN_PIT);
+        Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "shark_tooth"), SHARK_TOOTH);
 
         // Инструменты
         Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "blowgun"), BLOWGUN);
+        Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "leek"), LEEK);
+        
 
         // Блоки
         Registry.register(Registries.ITEM, Identifier.of(FruitMadness.MOD_ID, "mango_log"), MANGO_LOG_ITEM);

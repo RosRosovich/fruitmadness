@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.control.MoveControl;
@@ -43,6 +44,9 @@ public class SharkEntity extends WaterCreatureEntity {
             DataTracker.registerData(SharkEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     private static final TrackedData<Boolean> BABY =
             DataTracker.registerData(SharkEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+
+    // Шанс выпадения зуба при укусе игрока
+    private static final float TOOTH_DROP_CHANCE = 0.25f;
 
     private int attackTimer = 0;
 
@@ -130,6 +134,23 @@ public class SharkEntity extends WaterCreatureEntity {
                 serverWorld.spawnParticles(ParticleTypes.BUBBLE,
                         target.getX(), target.getY() + 0.5, target.getZ(),
                         20, 0.5, 0.5, 0.5, 0.1);
+            }
+
+            if (target instanceof PlayerEntity && serverWorld.random.nextFloat() < TOOTH_DROP_CHANCE) {
+                ItemStack toothStack = new ItemStack(ModItems.SHARK_TOOTH);
+                ItemEntity itemEntity = new ItemEntity(
+                        serverWorld,
+                        target.getX(),
+                        target.getY() + 0.5,
+                        target.getZ(),
+                        toothStack
+                );
+                itemEntity.setVelocity(
+                        (serverWorld.random.nextDouble() - 0.5) * 0.2,
+                        0.2,
+                        (serverWorld.random.nextDouble() - 0.5) * 0.2
+                );
+                serverWorld.spawnEntity(itemEntity);
             }
         }
 
