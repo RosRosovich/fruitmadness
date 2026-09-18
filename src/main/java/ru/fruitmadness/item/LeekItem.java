@@ -4,10 +4,7 @@ import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterials;
+import net.minecraft.item.*;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -188,6 +185,6 @@ public class LeekItem extends SwordItem {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return false;
+        return ingredient.isOf(Items.BONE_MEAL);
     }
 }

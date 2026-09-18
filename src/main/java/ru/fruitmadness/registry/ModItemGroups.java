@@ -15,13 +15,12 @@ public final class ModItemGroups {
             .displayName(Text.translatable("itemGroup.fruitmadness"))
             .icon(() -> new ItemStack(ModItems.MANGO))
             .entries((displayContext, entries) -> {
-                // Еда
+
                 entries.add(ModItems.MANGO);
                 entries.add(ModItems.GOLDEN_MANGO);
                 entries.add(ModItems.GOLDEN_PIT);
                 entries.add(ModItems.SHARK_TOOTH);
 
-                // Блоки
                 entries.add(ModItems.MANGO_LOG_ITEM);
                 entries.add(ModItems.STRIPPED_MANGO_LOG_ITEM);
                 entries.add(ModItems.MANGO_PLANKS_ITEM);
@@ -38,7 +37,6 @@ public final class ModItemGroups {
                 entries.add(ModItems.MANGO_DOOR_ITEM);
                 entries.add(ModItems.MANGO_TRAPDOOR_ITEM);
 
-                // Инструменты и сущности
                 entries.add(ModItems.BLOWGUN);
                 entries.add(ModItems.LEEK);
                 entries.add(ModItems.SHARK_SPAWN_EGG);

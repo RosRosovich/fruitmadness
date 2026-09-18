@@ -20,12 +20,11 @@ public class FruitMadness implements ModInitializer {
         ModItemGroups.register();
         ModStrippableBlocks.register();
         ModTrades.register();
-        ModRecipes.register();
         ModFlammableBlocks.register();
         ModFuelItems.register();
         ModLootTables.register();
         ModComposter.register();
-        ModFeatures.register();      // ← ДОБАВЬ ЭТУ СТРОКУ
+        ModFeatures.register();
         MangoWorldGen.register();
         SharkSpawns.register();
 

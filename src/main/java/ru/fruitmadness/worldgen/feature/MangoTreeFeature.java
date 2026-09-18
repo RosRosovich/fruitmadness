@@ -51,8 +51,8 @@ public class MangoTreeFeature extends Feature<DefaultFeatureConfig> {
             }
         }
 
-        if (!world.getBlockState(groundPos).isOf(Blocks.SAND)) {
-            world.setBlockState(groundPos, Blocks.SAND.getDefaultState(), 3);
+        if (!world.getBlockState(groundPos).isOf(Blocks.DIRT)) {
+            world.setBlockState(groundPos, Blocks.DIRT.getDefaultState(), 3);
         }
 
         for (int i = 0; i < height; i++) {
@@ -85,7 +85,6 @@ public class MangoTreeFeature extends Feature<DefaultFeatureConfig> {
     private boolean isValidGround(BlockState state) {
         return state.isOf(Blocks.SAND)
                 || state.isOf(Blocks.RED_SAND)
-                || state.isOf(Blocks.SANDSTONE)
                 || state.isOf(Blocks.DIRT)
                 || state.isOf(Blocks.GRASS_BLOCK)
                 || state.isOf(Blocks.COARSE_DIRT);
